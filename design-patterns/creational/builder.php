@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Builder pattern builds a complex object using simple objects and using a step
  * by step approach. A Builder class builds the final object step by step and is
@@ -103,7 +105,7 @@ class ChickenBurger extends Burger implements Item
 
     public function name(): string
     {
-        return 'Chicker Burger';
+        return 'Chicken Burger';
     }
 }
 
@@ -140,7 +142,7 @@ class Meal
 
 class MealBuilder
 {
-    public function prepareVegMeal(): object
+    public function prepareVegMeal(): Meal
     {
         $meal = new Meal();
         $meal->addItem(new VegBurger);
@@ -149,7 +151,7 @@ class MealBuilder
         return $meal;
     }
 
-    public function  prepareNonVegMeal(): object
+    public function  prepareNonVegMeal(): Meal
     {
         $meal = new Meal();
         $meal->addItem(new ChickenBurger());
