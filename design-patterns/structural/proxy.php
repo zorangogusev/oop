@@ -35,7 +35,7 @@ class RealImage implements Image
 
 class ProxyImage implements Image
 {
-    public $realImage;
+    public ?Image $realImage = null;
 
     public function __construct(
         private string $filename
